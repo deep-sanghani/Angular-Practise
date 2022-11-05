@@ -1,0 +1,26 @@
+<div class="container-fluid">
+
+  <div class="custom-card">
+
+    <div class="text-center mb-2">
+      <img class="center1" [src]="userDetails?.photoUrl" />
+    </div>
+
+    <p class="center2">
+      <span class="font-weight-bold">Name: </span>{{userDetails?.name}}
+    </p>
+
+    <p class="center2">
+      <span class="text-center">Email: </span>{{userDetails?.email}}
+    </p>
+
+    <button class="btn1" (click)="signOut()">Sign out</button>
+
+    <br><br>
+    <hr>
+    <br>
+    <ag-grid-angular style="width: 610px; height: 105px;" class="ag-theme-balham" [rowData]="rowData"
+      [columnDefs]="columnDefs">
+    </ag-grid-angular>
+</div>
+</div>

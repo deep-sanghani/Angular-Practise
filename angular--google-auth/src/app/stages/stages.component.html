@@ -1,0 +1,180 @@
+<mat-stepper [linear]="false" #stepper>
+  <ng-template matStepperIcon="edit">
+  </ng-template>
+
+  <!-- change default 'done' icon -->
+  <!--
+  <ng-template matStepperIcon="done">
+		<mat-icon>done_all</mat-icon>
+	</ng-template>
+  -->
+
+  <!-- changed step icons -->
+  <ng-template matStepperIcon="home">
+  </ng-template>
+  <ng-template matStepperIcon="done">
+  </ng-template>
+  <ng-template matStepperIcon="last">
+  </ng-template>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill out Form 1
+      </ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Last name, First name" [formControl]="firstFormGroup.controls['Name']" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email id" [formControl]="firstFormGroup.controls['Email']" required>
+      </mat-form-field>
+      <div>
+        <button class="btn btn-success mx-3" mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Fill out Form 2">
+    <form [formGroup]="secondFormGroup" >
+      <mat-form-field appearance="fill">
+        <mat-label>Mobile No</mat-label>
+        <input matInput placeholder="1234567890" [formControl]="secondFormGroup.controls['Mobile']" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <input matInput placeholder="Ex. 1 Main St, New York, NY" [formControl]="secondFormGroup.controls['Address']" required>
+      </mat-form-field>
+      <div>
+        <button class="btn btn-warning" mat-button matStepperPrevious>Back</button>
+        <button class="btn btn-success mx-3" mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdFormGroup">
+    <form [formGroup]="thirdFormGroup">
+      <ng-template matStepLabel>Question 1</ng-template>
+      <mat-label>What is Full form of HTML?</mat-label>
+      <br>
+      <mat-radio-group formControlName="thirdCtrl" required>
+        <mat-radio-button value="1" color="accent">Hypertext Markup Language</mat-radio-button><br>
+        <mat-radio-button value="2" color="accent">Hypertalk Markup Language</mat-radio-button><br><br>
+      </mat-radio-group>
+      <div>
+        <button class="btn btn-warning" mat-button matStepperPrevious>Back</button>
+        <button class="btn btn-success mx-3" mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="fourthFormGroup">
+    <form [formGroup]="fourthFormGroup">
+      <ng-template matStepLabel>Question 2</ng-template>
+      <mat-label>What are the advantages of Angular over React?</mat-label>
+      <br>
+      <mat-radio-group formControlName="fourthCtrl" required>
+        <mat-radio-button value="1" color="warn">Angular supports bidirectional data binding as well as mutable data.
+          React only supports
+          unidirectional and immutable data binding.</mat-radio-button><br>
+        <mat-radio-button value="2" color="warn">Angular supports unidirectional and immutable data binding. React only
+          supports
+          bidirectional and data binding as well as mutable data1.</mat-radio-button><br><br>
+      </mat-radio-group>
+      <div>
+        <button class="btn btn-warning" mat-button matStepperPrevious>Back</button>
+        <button class="btn btn-primary mx-3" mat-button (click)="stepper.reset()">Submit</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="fifthFormGroup">
+    <form [formGroup]="fifthFormGroup">
+      <ng-template matStepLabel>Question 3</ng-template>
+      <mat-label>What are the advantages of using Spring Boot?</mat-label>
+      <br>
+      <mat-radio-group formControlName="fifthCtrl" required>
+        <mat-radio-button value="1" color="warn">Easy to understand and develop spring applications.</mat-radio-button><br>
+        <mat-radio-button value="2" color="warn">Maximum configuration</mat-radio-button><br><br>
+      </mat-radio-group>
+      <div>
+        <button class="btn btn-warning" mat-button matStepperPrevious>Back</button>
+        <button class="btn btn-primary mx-3" mat-button (click)="stepper.reset()">Submit</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-stepper>
+
+<!-- <div class="container-fluid">
+
+    <div class="custom-card">
+        <div class="container">
+            <mat-horizontal-stepper>>
+            <form (ngSubmit)="submitForm()">
+                <div *ngIf="steps==1">
+                    <h4>User Details</h4>
+                    <div class="mb-3">
+                        <label for="exampleInputName" class="form-label">Full name</label>
+                        <input type="email" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputMobile" class="form-label">User Name</label>
+                        <input type="text" class="form-control" id="exampleInputusername">
+                    </div>
+                </div>
+                <div *ngIf="steps==2">
+                    <h4>Contact Details</h4>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputMobile" class="form-label">Mobile No</label>
+                        <input type="text" class="form-control" id="exampleInputMobile">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputAdd" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="exampleInputAdd">
+                    </div>
+                </div>
+                <div *ngIf="steps==3">
+                    <h4>What is Full form of HTML?</h4>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                            checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Hypertext Markup Language
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Hypertalk Markup Language
+                        </label>
+                    </div>
+                </div>
+                <div *ngIf="steps==4">
+                    <h4>What are the advantages of Angular over React?</h4>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                            checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Angular supports bidirectional data binding as well as mutable data. React only supports
+                            unidirectional and immutable data binding.
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Angular supports unidirectional and immutable data binding. React only supports
+                            bidirectional and data binding as well as mutable data1.
+                        </label>
+                    </div>
+                </div>
+                <br>
+                <a class="btn btn-warning" *ngIf="steps!=1" (click)="onprev()">Previous</a>
+                <button class="btn btn-success mx-3" *ngIf="steps!=4">Next</button>
+                <button type="submit" class="btn btn-primary mx-3" *ngIf="steps==4">Submit</button>
+            </form>
+    </mat-horizontal-stepper>
+        </div>
+    </div>
+</div> -->

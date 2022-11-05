@@ -1,0 +1,114 @@
+@import "~ag-grid-community/styles//ag-grid.css";
+@import "~ag-grid-community/styles//ag-theme-alpine.css";
+@import '~bootstrap/scss/bootstrap.scss';
+body { padding: 10px; }
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; 
+body {
+  background-color: #E5E5E5;
+}
+
+.container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.custom-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  width: 700px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    width: 300px;
+  }
+
+.horizontal-line-text {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #D8DDEC;
+  line-height: 0.1rem;
+  margin: 25px 0 30px 0;
+
+  span {
+    background: white;
+    padding: 0 10px;
+  }
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+
+  .center1{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  text-align: center;
+  }
+
+.google-sign-in {
+    background-color: white;
+    border: 1px solid #D8DDEC;
+    padding: 10px 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    height: 100%;
+  
+    img {
+      float: left;
+    }
+  
+    span {
+      vertical-align: middle;
+    }
+}
+
+.user-avatar {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.center2{
+    font-size: medium;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.btn1{
+    background-color: #e04912; /* Green */
+  border-color: black;
+  color: white;
+  margin-left: 43%;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  padding-left: auto;
+  padding-right: auto;
+}
+
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
